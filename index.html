@@ -6,12 +6,26 @@
     <title></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
     <link href="css/cube.min.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
     <script src="script/vue.js"></script>
     <script src="script/cube.min.js"></script>
+    <style>
+        #app {
+            padding: 5px 5px 0px 5px;
+        }
+
+        .cube-btn {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="app">{{ msg }}</div>
+    <div id="app">
+        <cube-button @click="alink('scroll')">scroll 滚动</cube-button>
+        <cube-button @click="alink('slide')">slide 轮播图</cube-button>
+        <cube-button @click="alink('swipe')">swipe 滑块</cube-button>
+    </div>
 </body>
 
 <script>
@@ -21,6 +35,11 @@
             return {
                 msg: "hello"
             };
+        },
+        methods: {
+            alink(name) {
+                location.href = name + ".html";
+            }
         }
     });
 </script>
